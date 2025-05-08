@@ -1,0 +1,18 @@
+parte inical da loja: https://html5up.net/massively
+carrossel de artistas: https://html5up.net/ethereal
+interação dos botões para pag de roupas: https://html5up.net/dimension
+vitrine de personalizados: https://html5up.net/multiverse
+vitrine para coleções: https://html5up.net/phantom
+itens pra comprar, pagina inicial: https://startbootstrap.com/template/shop-homepage
+pag item: https://startbootstrap.com/template/shop-item
+lista do forum: https://www.bootdey.com/snippets/view/bs5-forum-list
+
+chats: https://mdbootstrap.com/docs/standard/extended/chat/
+chat cliente: basic example
+chat admin: chat window
+
+tela de registro: https://colorlib.com/wp/bootstrap-form-templates/
+		https://mdbootstrap.com/docs/standard/extended/registration/
+		https://mdbootstrap.com/docs/standard/extended/login/
+forms: https://getbootstrap.com/docs/5.0/forms/overview/
+password reset: https://mdbootstrap.com/docs/standard/extended/password-reset-template/
