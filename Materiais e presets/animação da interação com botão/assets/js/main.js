@@ -83,8 +83,7 @@
 					// Already locked? Speed through "show" steps w/o delays.
 						if (locked || (typeof initial != 'undefined' && initial === true)) {
 
-							// Mark as switching.
-								$body.addClass('is-switching');
+							// Mark as switching					$body.addClass('is-switching');
 
 							// Mark as visible.
 								$body.addClass('is-article-visible');
