@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - BATRIP</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">BATRIP</a>
+        </div>
+    </nav>
+    <main class="container my-5 fade-in" id="products">
+        <h2 class="mb-4 text-uppercase fw-bold border-bottom border-secondary pb-2">Seu Carrinho</h2>
+        <div id="cart-list"></div>
+        <button class="btn btn-outline-light mt-3" id="clear-cart">Limpar Carrinho</button>
+    </main>
+    <footer class="text-center py-4 bg-black border-top border-secondary mt-5">
+        <p class="mb-0">&copy; 2025 BATRIP. All rights reserved.</p>
+    </footer>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+    function renderCart() {
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      let html = '';
+      let total = 0;
+      if (cart.length === 0) {
+        html = '<p>Seu carrinho está vazio.</p>';
+      } else {
+        html = '<ul class="list-group">';
+        cart.forEach(item => {
+          html += `<li class="list-group-item bg-black text-light d-flex justify-content-between align-items-center">
+            ${item.name} <span>x${item.qty} - $${(item.price * item.qty).toFixed(2)}</span>
+          </li>`;
+          total += item.price * item.qty;
+        });
+        html += '</ul>';
+        html += `<h4 class="mt-3">Total: $${total.toFixed(2)}</h4>`;
+      }
+      document.getElementById('cart-list').innerHTML = html;
+    }
+    renderCart();
+    document.getElementById('clear-cart').onclick = function() {
+      localStorage.removeItem('cart');
+      renderCart();
+    }
+    </script>
+</body>
+</html>

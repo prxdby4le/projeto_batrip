@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - BATRIP</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">BATRIP</a>
+        </div>
+    </nav>
+    <main class="container my-5 fade-in" id="products">
+        <div class="row">
+            <div class="col-md-6">
+                <img id="product-img" src="" class="img-fluid rounded shadow" alt="Produto">
+            </div>
+            <div class="col-md-6">
+                <h1 class="display-5 fw-bold" id="product-title"></h1>
+                <span class="badge bg-purple mb-2" id="product-badge"></span>
+                <p class="lead" id="product-desc"></p>
+                <h2 class="fw-bold mb-4" id="product-price"></h2>
+                <button class="btn btn-outline-light btn-lg animated-btn" id="add-to-cart-btn">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center py-4 bg-black border-top border-secondary mt-5">
+        <p class="mb-0">&copy; 2025 BATRIP. All rights reserved.</p>
+    </footer>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+    // Dados fake dos produtos
+    const products = {
+      1: {
+        img: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80",
+        title: "Graffiti Tee",
+        badge: "New",
+        desc: "Bold street art print, 100% cotton. Limited edition drop.",
+        price: 39.99
+      },
+      2: {
+        img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80",
+        title: "BATRIP Hoodie",
+        badge: "Hot",
+        desc: "Oversized fit, embroidered logo. Stay warm, stay underground.",
+        price: 59.99
+      },
+      3: {
+        img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+        title: "Underground Cap",
+        badge: "Best Seller",
+        desc: "Classic snapback with BATRIP patch. For true heads only.",
+        price: 24.99
+      }
+    };
+    // Pega o id da URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id') || 1;
+    const prod = products[id];
+    document.getElementById('product-img').src = prod.img;
+    document.getElementById('product-title').textContent = prod.title;
+    document.getElementById('product-badge').textContent = prod.badge;
+    document.getElementById('product-desc').textContent = prod.desc;
+    document.getElementById('product-price').textContent = "$" + prod.price;
+
+    // Animação botão
+    const btn = document.getElementById('add-to-cart-btn');
+    btn.addEventListener('click', function() {
+      btn.classList.remove('clicked');
+      void btn.offsetWidth;
+      btn.classList.add('clicked');
+      // Carrinho
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const found = cart.find(item => item.id == id);
+      if (found) {
+        found.qty += 1;
+      } else {
+        cart.push({id, name: prod.title, price: prod.price, qty: 1});
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Adicionado ao carrinho!');
+    });
+    </script>
+</body>
+</html>

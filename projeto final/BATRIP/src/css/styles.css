@@ -1,0 +1,195 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.product-item {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.bg-purple {
+    background-color: #6f42c1 !important;
+}
+body {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    letter-spacing: 0.5px;
+}
+.card-title {
+    letter-spacing: 1px;
+}
+
+/* Fundo geral com gradiente vermelho escuro */
+body.bg-dark {
+    background: linear-gradient(135deg, #1a000a 60%, #a3001a 100%);
+    color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Navbar escura com efeito de sombra vermelha */
+.navbar {
+    background: #0a0007 !important;
+    box-shadow: 0 4px 24px 0 rgba(163, 0, 26, 0.4);
+    border-bottom: 2px solid #a3001a;
+}
+
+/* Hero section com efeito de fundo vermelho e overlay */
+header.bg-gradient {
+    background: linear-gradient(135deg, #2d0014 60%, #a3001a 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+header.bg-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://svgshare.com/i/15nN.svg') repeat-x;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+header .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Cartões de produto com borda vermelha e efeito de sombra */
+.card.bg-black {
+    background: #1a000a !important;
+    border: 2px solid #a3001a !important;
+    box-shadow: 0 2px 16px 0 rgba(163, 0, 26, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card.bg-black:hover {
+    transform: translateY(-8px) scale(1.03) rotate(-1deg);
+    box-shadow: 0 8px 32px 0 #a3001a66;
+    border-color: #a3001a;
+}
+
+/* Badges customizadas */
+.badge.bg-purple, .badge.bg-danger, .badge.bg-success {
+    background: linear-gradient(90deg, #a3001a 60%, #6f42c1 100%);
+    border-radius: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid #fff2;
+}
+
+/* Botões com efeito vermelho */
+.btn-outline-light {
+    border-color: #a3001a !important;
+    color: #fff !important;
+    background: transparent;
+}
+.btn-outline-light:hover, .btn-outline-light:focus {
+    background: #a3001a !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+/* Footer escuro com detalhes em vermelho */
+footer.bg-black {
+    background: #0a0007 !important;
+    border-top: 2px solid #a3001a !important;
+    color: #f8f9fa;
+}
+
+/* Links com efeito vermelho */
+a.text-light.text-decoration-underline:hover {
+    color: #a3001a !important;
+    text-shadow: 0 0 8px #a3001a77;
+}
+
+/* Efeito de "tentáculos" no fundo (SVG decorativo) */
+body::after {
+    content: "";
+    position: fixed;
+    left: 0; right: 0; top: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: url('https://svgshare.com/i/15nN.svg') repeat-x bottom;
+    opacity: 0.08;
+}
+<link rel="stylesheet" href="css/main.css">
+<script src="js/main.js"></script>
+<a href="produto.html" class="btn btn-outline-light btn-sm animated-btn">Buy</a>
+.animated-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.animated-btn:active {
+    animation: btn-click 0.4s cubic-bezier(.4,0,.2,1);
+}
+.animated-btn.clicked {
+    animation: btn-click 0.4s cubic-bezier(.4,0,.2,1);
+}
+@keyframes btn-click {
+    0% { transform: scale(1);}
+    50% { transform: scale(0.92);}
+    100% { transform: scale(1);}
+}
+/* Efeito de brilho ao passar o mouse */
+.animated-btn:hover, .animated-btn:focus {
+    box-shadow: 0 0 16px #a3001a88, 0 2px 8px #000;
+    background: #a3001a33;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 #a3001a55; }
+    70% { box-shadow: 0 0 0 10px #a3001a00; }
+    100% { box-shadow: 0 0 0 0 #a3001a00; }
+}
+.added-to-cart {
+    animation: pulse 0.6s;
+}
+/* Novo código para efeito de fade-in */
+.fade-in {
+    animation: fadeIn 0.7s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
